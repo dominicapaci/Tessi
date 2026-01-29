@@ -1,0 +1,11 @@
+src/
+public/
+.eslintrc.cjs
+.gitignore
+idex.html
+package-lock.json
+package.json
+README.md
+tsconfig.json
+tsconfig.node.json
+vite.congig.ts
