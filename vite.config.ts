@@ -18,5 +18,6 @@ export default defineConfig({
     },
     watch: {},
     emptyOutDir: false,
+    cssCodeSplit: false, // Bundle CSS into single file
   },
 });

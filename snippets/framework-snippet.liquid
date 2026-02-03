@@ -1,3 +1,7 @@
-<p>framework test</p>
-<div id="root"></div>
+<link rel="stylesheet" href="{{ 'vite-style.css' | asset_url }}">
+<div 
+    id="root" 
+    data-image-tennis-court="{{ 'test1.png' | asset_url }}"
+    data-image-grips="{{ 'test2.png' | asset_url }}"
+  ></div>
 <script src="{{ 'vite-counter.js' | asset_url }}" defer></script>
