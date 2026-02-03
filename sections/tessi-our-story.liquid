@@ -1,0 +1,723 @@
+<style>
+  .tessi-story {
+    --story-bg: #0a0a0a;
+    --story-fg: #fafafa;
+    --story-muted: #a1a1a1;
+    --story-border: #262626;
+    --story-secondary: rgba(38, 38, 38, 0.3);
+  }
+
+  .tessi-story {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--story-bg);
+    color: var(--story-fg);
+  }
+
+  .tessi-story__serif {
+    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  }
+
+  /* Hero Section */
+  .tessi-story__hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .tessi-story__hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .tessi-story__hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .tessi-story__hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .tessi-story__hero-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .tessi-story__hero-subtitle {
+    font-size: 0.875rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Section Styles */
+  .tessi-story__section {
+    padding: 6rem 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .tessi-story__section {
+      padding: 8rem 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .tessi-story__section {
+      padding: 8rem 6rem;
+    }
+  }
+
+  .tessi-story__section--alt {
+    background-color: var(--story-secondary);
+  }
+
+  .tessi-story__container {
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+
+  .tessi-story__container--narrow {
+    max-width: 56rem;
+  }
+
+  .tessi-story__label {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--story-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .tessi-story__heading {
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    line-height: 1.1;
+    margin-bottom: 3rem;
+  }
+
+  .tessi-story__text {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--story-muted);
+  }
+
+  @media (min-width: 768px) {
+    .tessi-story__text {
+      font-size: 1.25rem;
+    }
+  }
+
+  .tessi-story__text--highlight {
+    color: var(--story-fg);
+    font-style: italic;
+  }
+
+  /* Why Tessi Grid */
+  .tessi-story__grid {
+    display: grid;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .tessi-story__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+  }
+
+  .tessi-story__content-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .tessi-story__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Brand Pillars */
+  .tessi-story__pillars {
+    display: grid;
+    gap: 2rem;
+    margin-top: 6rem;
+    padding-top: 4rem;
+    border-top: 1px solid var(--story-border);
+  }
+
+  @media (min-width: 768px) {
+    .tessi-story__pillars {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .tessi-story__pillar-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tessi-story__pillar-text {
+    color: var(--story-muted);
+    line-height: 1.75;
+  }
+
+  /* Founder Section */
+  .tessi-story__founder-grid {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .tessi-story__founder-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+  }
+
+  .tessi-story__founder-content {
+    order: 2;
+  }
+
+  @media (min-width: 1024px) {
+    .tessi-story__founder-content {
+      order: 1;
+    }
+  }
+
+  .tessi-story__founder-intro {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    color: var(--story-muted);
+    margin-bottom: 2.5rem;
+    font-style: italic;
+  }
+
+  .tessi-story__founder-quote {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    padding: 1rem 0;
+    color: var(--story-fg);
+  }
+
+  .tessi-story__founder-signoff {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--story-border);
+  }
+
+  .tessi-story__founder-image-wrapper {
+    position: relative;
+    order: 1;
+  }
+
+  @media (min-width: 1024px) {
+    .tessi-story__founder-image-wrapper {
+      order: 2;
+    }
+  }
+
+  .tessi-story__founder-badge {
+    position: absolute;
+    bottom: -1.5rem;
+    left: -1.5rem;
+    background-color: var(--story-bg);
+    padding: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .tessi-story__founder-badge {
+      bottom: -2rem;
+      left: -2rem;
+      padding: 2rem;
+    }
+  }
+
+  .tessi-story__founder-badge-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: 0.05em;
+  }
+
+  .tessi-story__founder-badge-year {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--story-muted);
+    margin-top: 0.25rem;
+  }
+
+  /* Mission Section */
+  .tessi-story__mission {
+    text-align: center;
+  }
+
+  .tessi-story__mission-content {
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .tessi-story__mission-quote {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid var(--story-border);
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-style: italic;
+  }
+
+  /* CTA Section */
+  .tessi-story__cta {
+    text-align: center;
+    padding: 4rem 1.5rem 6rem;
+    background-color: var(--story-secondary);
+  }
+
+  @media (min-width: 768px) {
+    .tessi-story__cta {
+      padding: 6rem 3rem;
+    }
+  }
+
+  .tessi-story__cta-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .tessi-story__cta-button {
+    display: inline-block;
+    border: 1px solid var(--story-fg);
+    background: transparent;
+    color: var(--story-fg);
+    padding: 1rem 2.5rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .tessi-story__cta-button:hover {
+    background-color: var(--story-fg);
+    color: var(--story-bg);
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .tessi-story__animate {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .tessi-story__animate--delay-1 {
+    animation-delay: 0.15s;
+    opacity: 0;
+  }
+
+  .tessi-story__animate--delay-2 {
+    animation-delay: 0.3s;
+    opacity: 0;
+  }
+
+  .tessi-story__animate--delay-3 {
+    animation-delay: 0.45s;
+    opacity: 0;
+  }
+
+  /* Text balance utility */
+  .tessi-story__balance {
+    text-wrap: balance;
+  }
+</style>
+
+<div class="tessi-story">
+  <!-- Hero Section -->
+  <section class="tessi-story__hero">
+    {% if section.settings.hero_image != blank %}
+      <img
+        src="{{ section.settings.hero_image | image_url: width: 1920 }}"
+        alt="{{ section.settings.hero_image.alt | default: 'Tennis court' }}"
+        class="tessi-story__hero-image"
+        loading="eager"
+      >
+    {% endif %}
+    <div class="tessi-story__hero-overlay"></div>
+    <div class="tessi-story__hero-content">
+      <h1 class="tessi-story__hero-title tessi-story__serif tessi-story__animate">
+        {{ section.settings.hero_title | default: 'Our Story' }}
+      </h1>
+      <p class="tessi-story__hero-subtitle tessi-story__animate tessi-story__animate--delay-1">
+        {{ section.settings.hero_subtitle | default: 'The Court is Her Runway' }}
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Tessi Section -->
+  <section class="tessi-story__section">
+    <div class="tessi-story__container">
+      <p class="tessi-story__label">{{ section.settings.why_label | default: 'Why Tessi' }}</p>
+      <h2 class="tessi-story__heading tessi-story__serif tessi-story__balance">
+        {{ section.settings.why_heading | default: 'The answer to a question the sports industry stopped asking.' }}
+      </h2>
+
+      <div class="tessi-story__grid">
+        <div class="tessi-story__content-stack">
+          <p class="tessi-story__text">
+            {{ section.settings.why_text_1 }}
+          </p>
+          <p class="tessi-story__text">
+            Tessi is different. We are the first brand to approach tennis gear as
+            <span class="tessi-story__text--highlight">couture accessories</span>
+            rather than just utility items.
+          </p>
+          <p class="tessi-story__text">
+            {{ section.settings.why_text_2 | default: "We blend high-fashion aesthetics with pro-grade performance. We don't just slap a novelty print on a grip; we curate collections inspired by luxury fashion houses, designed for the modern woman who views the court as her runway." }}
+          </p>
+        </div>
+
+        <div>
+          {% if section.settings.why_image != blank %}
+            <img
+              src="{{ section.settings.why_image | image_url: width: 800 }}"
+              alt="{{ section.settings.why_image.alt | default: 'Tessi luxury tennis grips collection' }}"
+              class="tessi-story__image"
+              loading="lazy"
+            >
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Brand Pillars -->
+      <div class="tessi-story__pillars">
+        <div>
+          <h3 class="tessi-story__pillar-title tessi-story__serif">Fashion-First</h3>
+          <p class="tessi-story__pillar-text">
+            {{ section.settings.pillar_1_text | default: 'We believe your grip should match your fit, not clash with it.' }}
+          </p>
+        </div>
+        <div>
+          <h3 class="tessi-story__pillar-title tessi-story__serif">Uncompromising</h3>
+          <p class="tessi-story__pillar-text">
+            {{ section.settings.pillar_2_text | default: "We use tacky, absorbent, pro-comfort materials because looking good shouldn't mean playing bad." }}
+          </p>
+        </div>
+        <div>
+          <h3 class="tessi-story__pillar-title tessi-story__serif">For the Modern Athlete</h3>
+          <p class="tessi-story__pillar-text">
+            {{ section.settings.pillar_3_text | default: 'We are redefining femininity in sports, proving that you can be powerful and pretty.' }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet the Founder Section -->
+  <section class="tessi-story__section tessi-story__section--alt">
+    <div class="tessi-story__container">
+      <div class="tessi-story__founder-grid">
+        <div class="tessi-story__founder-content">
+          <p class="tessi-story__label">{{ section.settings.founder_label | default: 'Meet the Founder' }}</p>
+          <h2 class="tessi-story__heading tessi-story__serif">
+            {{ section.settings.founder_greeting | default: "Hi, I'm Liv." }}
+          </h2>
+          <p class="tessi-story__founder-intro tessi-story__serif">
+            {{ section.settings.founder_intro | default: '23 years old. Former collegiate athlete. Founder of Tessi.' }}
+          </p>
+
+          <div class="tessi-story__content-stack">
+            <p class="tessi-story__text">
+              {{ section.settings.founder_text_1 | default: "My journey didn't start in a boardroom; it started on a tennis court. I was a student-athlete playing college tennis, spending hours perfecting my game. I loved the sport, and I loved the fashion that came with it—the skirts, the dresses, the style." }}
+            </p>
+            <p class="tessi-story__text">
+              But every time I looked down at my racket, I saw a disconnect.
+            </p>
+            <p class="tessi-story__founder-quote tessi-story__serif">
+              "The outfit was cute. The racket was dull."
+            </p>
+            <p class="tessi-story__text">
+              {{ section.settings.founder_text_2 | default: "I realized that for decades, women in tennis have been handed the same equipment designed for men. While fashion on the court had evolved, the accessories had remained stuck in the past." }}
+            </p>
+            <p class="tessi-story__text">
+              {{ section.settings.founder_text_3 | default: "During a two-week Christmas break, I taught myself everything from product design to supply chain management via YouTube. I designed my first patterns, used my iPhone and a Walgreens posterboard to take my first product photos, and poured my life savings into my first inventory run." }}
+            </p>
+            <p class="tessi-story__text">
+              I quit the corporate job. I traveled the world. And I came back with a singular vision: to build something bigger than just a "cute grip." I wanted to build a
+              <span class="tessi-story__text--highlight">legacy brand</span>.
+            </p>
+          </div>
+
+          <div class="tessi-story__founder-signoff">
+            <p class="tessi-story__serif" style="font-size: 1.125rem;">See you on the court,</p>
+            <p class="tessi-story__serif" style="font-size: 1.5rem; font-style: italic; margin-top: 0.5rem;">Liv</p>
+          </div>
+        </div>
+
+        <div class="tessi-story__founder-image-wrapper">
+          {% if section.settings.founder_image != blank %}
+            <img
+              src="{{ section.settings.founder_image | image_url: width: 800 }}"
+              alt="{{ section.settings.founder_image.alt | default: 'Liv, founder of Tessi' }}"
+              class="tessi-story__image"
+              loading="lazy"
+            >
+          {% endif %}
+          <div class="tessi-story__founder-badge">
+            <p class="tessi-story__founder-badge-title tessi-story__serif">tessi</p>
+            <p class="tessi-story__founder-badge-year">Est. 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Bigger Mission Section -->
+  <section class="tessi-story__section tessi-story__mission">
+    <div class="tessi-story__container tessi-story__container--narrow">
+      <p class="tessi-story__label">{{ section.settings.mission_label | default: 'The Bigger Mission' }}</p>
+      <h2 class="tessi-story__heading tessi-story__serif tessi-story__balance">
+        {{ section.settings.mission_heading | default: 'More than a brand. A roadmap.' }}
+      </h2>
+
+      <div class="tessi-story__mission-content">
+        <div class="tessi-story__content-stack">
+          <p class="tessi-story__text">
+            {{ section.settings.mission_text_1 | default: 'I want Tessi to be a roadmap for other young women who dream of building something of their own.' }}
+          </p>
+          <p class="tessi-story__text">
+            I quit the "safe" corporate path to solo-build this company from scratch, and I'm documenting the entire journey to show you that
+            <span class="tessi-story__text--highlight">it's possible</span>.
+          </p>
+          <p class="tessi-story__text">
+            {{ section.settings.mission_text_2 | default: "I want this brand to inspire you to take up space, trust your vision, and feel empowered to start your own company—whether that's in sports, fashion, or beyond." }}
+          </p>
+        </div>
+
+        <p class="tessi-story__mission-quote tessi-story__serif tessi-story__balance">
+          "{{ section.settings.mission_quote | default: 'Take up space. Trust your vision. Build your legacy.' }}"
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="tessi-story__cta">
+    <div class="tessi-story__container tessi-story__container--narrow">
+      <p class="tessi-story__cta-title tessi-story__serif">
+        {{ section.settings.cta_title | default: 'Ready to elevate your game?' }}
+      </p>
+      <a href="{{ section.settings.cta_link | default: '/' }}" class="tessi-story__cta-button">
+        {{ section.settings.cta_text | default: 'Join the Waitlist' }}
+      </a>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Tessi Our Story",
+  "tag": "section",
+  "class": "tessi-our-story-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero Section"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Background Image"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero Title",
+      "default": "Our Story"
+    },
+    {
+      "type": "text",
+      "id": "hero_subtitle",
+      "label": "Hero Subtitle",
+      "default": "The Court is Her Runway"
+    },
+    {
+      "type": "header",
+      "content": "Why Tessi Section"
+    },
+    {
+      "type": "text",
+      "id": "why_label",
+      "label": "Section Label",
+      "default": "Why Tessi"
+    },
+    {
+      "type": "text",
+      "id": "why_heading",
+      "label": "Section Heading",
+      "default": "The answer to a question the sports industry stopped asking."
+    },
+    {
+      "type": "textarea",
+      "id": "why_text_1",
+      "label": "First Paragraph",
+      "default": "Most brands treat women's sports equipment as an afterthought—or worse, they just \"shrink it and pink it.\""
+    },
+    {
+      "type": "textarea",
+      "id": "why_text_2",
+      "label": "Third Paragraph",
+      "default": "We blend high-fashion aesthetics with pro-grade performance. We don't just slap a novelty print on a grip; we curate collections inspired by luxury fashion houses, designed for the modern woman who views the court as her runway."
+    },
+    {
+      "type": "image_picker",
+      "id": "why_image",
+      "label": "Product Image"
+    },
+    {
+      "type": "header",
+      "content": "Brand Pillars"
+    },
+    {
+      "type": "textarea",
+      "id": "pillar_1_text",
+      "label": "Fashion-First Text",
+      "default": "We believe your grip should match your fit, not clash with it."
+    },
+    {
+      "type": "textarea",
+      "id": "pillar_2_text",
+      "label": "Uncompromising Text",
+      "default": "We use tacky, absorbent, pro-comfort materials because looking good shouldn't mean playing bad."
+    },
+    {
+      "type": "textarea",
+      "id": "pillar_3_text",
+      "label": "Modern Athlete Text",
+      "default": "We are redefining femininity in sports, proving that you can be powerful and pretty."
+    },
+    {
+      "type": "header",
+      "content": "Meet the Founder Section"
+    },
+    {
+      "type": "text",
+      "id": "founder_label",
+      "label": "Section Label",
+      "default": "Meet the Founder"
+    },
+    {
+      "type": "text",
+      "id": "founder_greeting",
+      "label": "Greeting",
+      "default": "Hi, I'm Liv."
+    },
+    {
+      "type": "text",
+      "id": "founder_intro",
+      "label": "Introduction",
+      "default": "23 years old. Former collegiate athlete. Founder of Tessi."
+    },
+    {
+      "type": "textarea",
+      "id": "founder_text_1",
+      "label": "First Paragraph",
+      "default": "My journey didn't start in a boardroom; it started on a tennis court. I was a student-athlete playing college tennis, spending hours perfecting my game. I loved the sport, and I loved the fashion that came with it—the skirts, the dresses, the style."
+    },
+    {
+      "type": "textarea",
+      "id": "founder_text_2",
+      "label": "Second Paragraph",
+      "default": "I realized that for decades, women in tennis have been handed the same equipment designed for men. While fashion on the court had evolved, the accessories had remained stuck in the past."
+    },
+    {
+      "type": "textarea",
+      "id": "founder_text_3",
+      "label": "Third Paragraph",
+      "default": "During a two-week Christmas break, I taught myself everything from product design to supply chain management via YouTube. I designed my first patterns, used my iPhone and a Walgreens posterboard to take my first product photos, and poured my life savings into my first inventory run."
+    },
+    {
+      "type": "image_picker",
+      "id": "founder_image",
+      "label": "Founder Photo"
+    },
+    {
+      "type": "header",
+      "content": "The Bigger Mission Section"
+    },
+    {
+      "type": "text",
+      "id": "mission_label",
+      "label": "Section Label",
+      "default": "The Bigger Mission"
+    },
+    {
+      "type": "text",
+      "id": "mission_heading",
+      "label": "Section Heading",
+      "default": "More than a brand. A roadmap."
+    },
+    {
+      "type": "textarea",
+      "id": "mission_text_1",
+      "label": "First Paragraph",
+      "default": "I want Tessi to be a roadmap for other young women who dream of building something of their own."
+    },
+    {
+      "type": "textarea",
+      "id": "mission_text_2",
+      "label": "Third Paragraph",
+      "default": "I want this brand to inspire you to take up space, trust your vision, and feel empowered to start your own company—whether that's in sports, fashion, or beyond."
+    },
+    {
+      "type": "text",
+      "id": "mission_quote",
+      "label": "Closing Quote",
+      "default": "Take up space. Trust your vision. Build your legacy."
+    },
+    {
+      "type": "header",
+      "content": "Call to Action"
+    },
+    {
+      "type": "text",
+      "id": "cta_title",
+      "label": "CTA Title",
+      "default": "Ready to elevate your game?"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text",
+      "default": "Join the Waitlist"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tessi Our Story"
+    }
+  ]
+}
+{% endschema %}
