@@ -1,4 +1,6 @@
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
   .tessi-story {
     --story-bg: {{ section.settings.background_color | default: '#FAF9F7' }};
     --story-fg: {{ section.settings.text_color | default: '#1A1A1A' }};
@@ -99,11 +101,7 @@
     letter-spacing: 0.4em;
     text-transform: uppercase;
     color: var(--story-accent);
-    margin-bottom: 2rem; /* default, overridden per section */
-  }
-
-  .tessi-story__label--large {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   /* Why Tessi Section */
@@ -227,22 +225,19 @@
   }
 
   .tessi-story__pillar {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding: 2.5rem 0;
     border-bottom: 1px solid var(--story-border);
   }
 
   @media (min-width: 768px) {
     .tessi-story__pillar {
-      padding-top: 3.5rem;
-      padding-bottom: 3.5rem;
-      padding-right: 2.5rem;
+      padding: 3.5rem 2.5rem 3.5rem 0;
       border-bottom: none;
       border-right: 1px solid var(--story-border);
     }
-    .tessi-story__pillar:first-child { padding-left: 0; padding-right: 2.5rem; }
-    .tessi-story__pillar:nth-child(2) { padding-left: 2.5rem; padding-right: 2.5rem; }
+    .tessi-story__pillar:first-child { padding-left: 0; }
     .tessi-story__pillar:last-child { border-right: none; padding-right: 0; padding-left: 2.5rem; }
+    .tessi-story__pillar:nth-child(2) { padding-left: 2.5rem; padding-right: 2.5rem; }
   }
 
   .tessi-story__pillar-number {
@@ -264,10 +259,6 @@
   }
 
   /* Meet the Founder Section */
-  .tessi-story__founder-label {
-    margin-bottom: 4rem;
-  }
-
   .tessi-story__founder-grid {
     display: grid;
     gap: 2rem;
@@ -327,21 +318,14 @@
 
   /* Quote Section */
   .tessi-story__quote-section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding: 3rem 0;
     border-top: 1px solid var(--story-border);
     border-bottom: 1px solid var(--story-border);
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
   }
 
   @media (min-width: 768px) {
-    .tessi-story__quote-section {
-      padding-top: 4rem;
-      padding-bottom: 4rem;
-      margin-top: 4rem;
-      margin-bottom: 4rem;
-    }
+    .tessi-story__quote-section { padding: 4rem 0; margin: 4rem 0; }
   }
 
   .tessi-story__quote-text {
@@ -381,22 +365,6 @@
   }
 
   /* Mission Section - Original Centered Design */
-  .tessi-story__mission {
-    padding-top: 6rem;
-    padding-bottom: 8rem;
-  }
-
-  @media (min-width: 768px) {
-    .tessi-story__mission {
-      padding-top: 8rem;
-      padding-bottom: 8rem;
-    }
-  }
-
-  .tessi-story__mission-label {
-    margin-bottom: 2rem;
-  }
-
   .tessi-story__mission-content {
     max-width: 48rem;
     margin: 0 auto;
@@ -438,15 +406,6 @@
   /* CTA Section */
   .tessi-story__cta {
     text-align: center;
-    padding-top: 5rem;
-    padding-bottom: 7rem;
-  }
-
-  @media (min-width: 768px) {
-    .tessi-story__cta {
-      padding-top: 7rem;
-      padding-bottom: 7rem;
-    }
   }
 
   .tessi-story__cta-content {
@@ -594,7 +553,7 @@
   <!-- Meet the Founder Section -->
   <section class="tessi-story__section tessi-story__section--secondary">
     <div class="tessi-story__container">
-      <p class="tessi-story__label tessi-story__founder-label">{{ section.settings.founder_label | default: 'Meet the Founder' }}</p>
+      <p class="tessi-story__label">{{ section.settings.founder_label | default: 'Meet the Founder' }}</p>
 
       <!-- First Block: Text Left, Image Right -->
       <div class="tessi-story__founder-grid">
@@ -643,7 +602,7 @@
         <div class="tessi-story__founder-content">
           <p class="tessi-story__text">{{ section.settings.founder_paragraph_4 | default: "During a two-week Christmas break, I taught myself everything from product design to supply chain management via YouTube. I designed my first patterns, used my iPhone and a Walgreens posterboard to take my first product photos, and poured my life savings into my first inventory run." }}</p>
           <p class="tessi-story__text">
-            {{ section.settings.founder_paragraph_5_start  }}
+            {{ section.settings.founder_paragraph_5_start }}
             <span class="tessi-story__text-highlight-serif tessi-story__serif">{{ section.settings.founder_paragraph_5_highlight | default: 'legacy brand' }}</span>.
           </p>
 
@@ -657,9 +616,9 @@
   </section>
 
   <!-- The Bigger Mission Section -->
-  <section class="tessi-story__section tessi-story__mission">
+  <section class="tessi-story__section">
     <div class="tessi-story__mission-content">
-      <p class="tessi-story__label tessi-story__mission-label">{{ section.settings.mission_label | default: 'The Bigger Mission' }}</p>
+      <p class="tessi-story__label">{{ section.settings.mission_label | default: 'The Bigger Mission' }}</p>
       <h2 class="tessi-story__mission-title tessi-story__serif tessi-story__balance">
         {{ section.settings.mission_title_start | default: 'More than a brand.' }}<br>
         <span class="tessi-story__mission-title-muted">{{ section.settings.mission_title_italic | default: 'A roadmap.' }}</span>
@@ -677,7 +636,7 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="tessi-story__section--secondary tessi-story__cta">
+  <section class="tessi-story__section tessi-story__section--secondary tessi-story__cta">
     <div class="tessi-story__cta-content">
       <p class="tessi-story__cta-title tessi-story__serif">{{ section.settings.cta_title | default: 'Ready to elevate your game?' }}</p>
       <a href="{{ section.settings.cta_link | default: '/' }}" class="tessi-story__cta-button">
