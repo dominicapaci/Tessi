@@ -516,15 +516,33 @@
     <div class="tessi-story__pillars">
       <div class="tessi-story__container">
         <div class="tessi-story__pillars-grid">
-          {% for block in section.blocks %}
-            {% if block.type == 'pillar' %}
+          {% assign pillar_blocks = section.blocks | where: 'type', 'pillar' %}
+          {% if pillar_blocks.size > 0 %}
+            {% for block in pillar_blocks %}
               <div class="tessi-story__pillar" {{ block.shopify_attributes }}>
                 <span class="tessi-story__pillar-number">{{ block.settings.number | default: '01' }}</span>
                 <h3 class="tessi-story__pillar-title tessi-story__serif">{{ block.settings.title | default: 'Fashion-First' }}</h3>
                 <p class="tessi-story__pillar-text">{{ block.settings.description | default: 'We believe your grip should match your fit, not clash with it.' }}</p>
               </div>
-            {% endif %}
-          {% endfor %}
+            {% endfor %}
+          {% else %}
+            <!-- Default pillars when no blocks are added -->
+            <div class="tessi-story__pillar">
+              <span class="tessi-story__pillar-number">01</span>
+              <h3 class="tessi-story__pillar-title tessi-story__serif">Fashion-First</h3>
+              <p class="tessi-story__pillar-text">We believe your grip should match your fit, not clash with it.</p>
+            </div>
+            <div class="tessi-story__pillar">
+              <span class="tessi-story__pillar-number">02</span>
+              <h3 class="tessi-story__pillar-title tessi-story__serif">Uncompromising</h3>
+              <p class="tessi-story__pillar-text">We use tacky, absorbent, pro-comfort materials because looking good shouldn't mean playing bad.</p>
+            </div>
+            <div class="tessi-story__pillar">
+              <span class="tessi-story__pillar-number">03</span>
+              <h3 class="tessi-story__pillar-title tessi-story__serif">Modern Athlete</h3>
+              <p class="tessi-story__pillar-text">We are redefining femininity in sports, proving that you can be powerful and pretty.</p>
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>
