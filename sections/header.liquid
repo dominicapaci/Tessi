@@ -23,6 +23,9 @@
   elsif section.settings.enable_transparent_header_collection and template.name == 'collection'
     assign transparent = 'always'
     assign transparent_color_scheme = section.settings.collection_color_scheme
+  elsif section.settings.enable_transparent_header_page and template.name == 'page'
+    assign transparent = 'always'
+    assign transparent_color_scheme = section.settings.page_color_scheme
   endif
 
   if section.settings.enable_sticky_header == 'always'
@@ -1102,7 +1105,7 @@
       "id": "color_scheme_transparent",
       "label": "t:settings.inverse",
       "default": "primary",
-      "visible_if": "{{ section.settings.enable_transparent_header_home or section.settings.enable_transparent_header_product or section.settings.enable_transparent_header_collection }}"
+      "visible_if": "{{ section.settings.enable_transparent_header_home or section.settings.enable_transparent_header_product or section.settings.enable_transparent_header_collection or section.settings.enable_transparent_header_page }}"
     },
     {
       "type": "header",
@@ -1184,6 +1187,33 @@
       ],
       "default": "default",
       "visible_if": "{{ section.settings.enable_transparent_header_collection }}"
+    },
+    {
+      "type": "header",
+      "content": "Pages (Our Story, etc.)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_transparent_header_page",
+      "label": "t:settings.transparent_background",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "page_color_scheme",
+      "label": "t:settings.color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:options.default"
+        },
+        {
+          "value": "inverse",
+          "label": "t:options.inverse"
+        }
+      ],
+      "default": "default",
+      "visible_if": "{{ section.settings.enable_transparent_header_page }}"
     }
   ],
   "presets": []
