@@ -33,10 +33,10 @@ export default function OurStoryPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative z-10 px-6 md:px-12 lg:px-24 pb-12 md:pb-16"
+          className="relative z-10 px-6 md:px-12 lg:px-24 pb-12 md:pb-6"
         >
-          <p className="text-xs tracking-[0.4em] uppercase text-white/70 mb-3">
-            The Court is Her Runway
+          <p className="text-xs tracking-[0.4em] uppercase text-tessi-gold ">
+            The Court is your Runway
           </p>
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-wide text-white">
             Our Story
@@ -52,14 +52,14 @@ export default function OurStoryPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="px-6 md:px-12 lg:px-24 max-w-7xl mx-auto mb-16 md:mb-24"
+          className="px-6 md:px-12 lg:px-24 mx-auto mb-16 md:mb-24"
         >
-          <p className="text-md tracking-[0.4em] uppercase text-accent mb-8">
-            Why Tessi
+          <p className="text-lg tracking-[0.4em] uppercase text-tessi-gold mb-8">
+            Why Tessi ?
           </p>
           <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.1] max-w-5xl">
-            The answer to a question the sports industry{" "}
-            <span className="italic text-muted-foreground">stopped asking.</span>
+          Tessi is the answer to a question the sports industry {" "}
+            <span className="italic text-dusty-rose">stopped asking.</span>
           </h2>
         </motion.div>
 
@@ -94,11 +94,11 @@ export default function OurStoryPage() {
             <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mb-6">
               Most brands treat women&apos;s sports equipment as an
               afterthought—or worse, they just{" "}
-              <span className="text-foreground">&quot;shrink it and pink it.&quot;</span>
+              <span className="text-dusty-rose font-didot">&quot;shrink it and pink it.&quot;</span>
             </p>
             <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mb-6">
               Tessi is different. We are the first brand to approach tennis gear
-              as <span className="text-foreground font-serif italic">couture accessories</span>{" "}
+              as <span className="text-tessi-gold font-serif italic">couture accessories</span>{" "}
               rather than just utility items.
             </p>
             <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
@@ -116,7 +116,7 @@ export default function OurStoryPage() {
           viewport={{ once: true, margin: "-50px" }}
           className="mt-24 md:mt-32 px-6 md:px-12 lg:px-24"
         >
-          <div className="max-w-7xl mx-auto">
+          <div className="mx-auto">
             <div className="grid md:grid-cols-3 gap-0 border-t border-border">
               <motion.div
                 variants={fadeIn}
@@ -125,11 +125,11 @@ export default function OurStoryPage() {
                 <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground">
                   01
                 </span>
-                <h3 className="font-serif text-3xl md:text-4xl mt-4 mb-4">
+                <h3 className="font-serif text-3xl md:text-4xl mt-4 mb-4 text-tessi-gold">
                   Fashion-First
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We believe your grip should match your fit, not clash with it.
+                  Your grip should <span className="text-dusty-rose italic">match</span> your fit, not clash with it.
                 </p>
               </motion.div>
               <motion.div
@@ -139,24 +139,22 @@ export default function OurStoryPage() {
                 <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground">
                   02
                 </span>
-                <h3 className="font-serif text-3xl md:text-4xl mt-4 mb-4">
+                <h3 className="font-serif text-3xl md:text-4xl mt-4 mb-4 text-tessi-gold">
                   Uncompromising
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We use tacky, absorbent, pro-comfort materials because looking
-                  good shouldn&apos;t mean playing bad.
+                  Pro-comfort materials that perform. Because looking good should <span className="text-dusty-rose italic">never</span> mean playing bad.
                 </p>
               </motion.div>
               <motion.div variants={fadeIn} className="py-10 md:py-14 md:pl-10">
                 <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground">
                   03
                 </span>
-                <h3 className="font-serif text-3xl md:text-4xl mt-4 mb-4">
+                <h3 className="font-serif text-3xl md:text-4xl mt-4 mb-4 text-tessi-gold">
                   Modern Athlete
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We are redefining femininity in sports, proving that you can be
-                  powerful and pretty.
+                  Redefining femininity in sports. You can be <span className="text-dusty-rose italic">powerful</span> and pretty.
                 </p>
               </motion.div>
             </div>
@@ -166,12 +164,12 @@ export default function OurStoryPage() {
 
       {/* Meet the Founder Section */}
       <section className="py-20 md:py-28 bg-secondary">
-        <div className="px-6 md:px-12 lg:px-24 max-w-7xl mx-auto w-full">
+        <div className="px-6 md:px-12 lg:px-24 mx-auto w-full">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-xs tracking-[0.4em] uppercase text-accent mb-16"
+            className="text-xs tracking-[0.4em] uppercase text-tessi-gold mb-16"
           >
             Meet the Founder
           </motion.p>
@@ -187,9 +185,9 @@ export default function OurStoryPage() {
               className="order-2 md:order-1 md:flex-1"
             >
               <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl mb-6">
-                Hi, I&apos;m Liv.
+                Hi, I&apos;m <span className="text-tessi-gold">Liv</span>.
               </h2>
-              <p className="font-serif text-xl md:text-2xl text-muted-foreground italic mb-8">
+              <p className="font-serif text-xl md:text-2xl text-dusty-rose italic mb-8">
                 23 years old. Former collegiate athlete. Founder of Tessi.
               </p>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
@@ -199,11 +197,11 @@ export default function OurStoryPage() {
                   spending hours perfecting my game. I loved the sport, and I loved
                   the fashion that came with it—the skirts, the dresses, the style.
                 </p>
-                <p>But every time I looked down at my racket, I saw a disconnect.</p>
+                <p className="text-tessi-gold font-medium">But every time I looked down at my racket, I saw a disconnect.</p>
                 <p>
-                  I realized that for decades, women in tennis have been handed the
-                  same equipment designed for men. While fashion on the court had
-                  evolved, the accessories had remained stuck in the past.
+                  For decades, women in tennis have been handed the
+                  same equipment designed for men. Fashion on the court had
+                  evolved. <span className="text-dusty-rose italic">The gear hadn&apos;t.</span>
                 </p>
               </div>
             </motion.div>
@@ -236,7 +234,9 @@ export default function OurStoryPage() {
             className="py-12 md:py-16 border-y border-border my-8 md:my-16"
           >
             <p className="font-serif text-3xl md:text-5xl lg:text-6xl text-center italic leading-tight text-balance">
-              &quot;The outfit was cute.<br className="hidden md:block" /> The racket was dull.&quot;
+              <span className="text-dusty-rose">&quot;The outfit was cute.</span>
+              <br className="hidden md:block" />
+              <span className="text-muted-foreground">The racket was dull.&quot;</span>
             </p>
           </motion.div>
 
@@ -270,21 +270,18 @@ export default function OurStoryPage() {
             >
               <p>
                 During a two-week Christmas break, I taught myself everything from
-                product design to supply chain management via YouTube. I designed
-                my first patterns, used my iPhone and a Walgreens posterboard to
-                take my first product photos, and poured my life savings into my
-                first inventory run.
+                product design to supply chain management via YouTube. iPhone photos, a Walgreens posterboard, and <span className="text-tessi-gold font-medium">every dollar I had</span> went into that first run.
               </p>
               <p>
-                I quit the corporate job. I traveled the world. And I came back
+                I quit the corporate job. Traveled the world. Came back
                 with a singular vision: to build something bigger than just a
-                &quot;cute grip.&quot; I wanted to build a{" "}
-                <span className="text-foreground italic">legacy brand</span>.
+                &quot;cute grip.&quot; To build a{" "}
+                <span className="text-tessi-gold font-medium italic">legacy brand</span>.
               </p>
 
               <div className="pt-8">
-                <p className="font-serif text-xl text-foreground">See you on the court,</p>
-                <p className="font-serif text-4xl mt-3 italic">Liv</p>
+                <p className="font-serif text-xl text-muted-foreground">See you on the court,</p>
+                <p className="font-serif text-4xl mt-3 italic text-tessi-gold">Liv</p>
               </div>
             </motion.div>
           </div>
@@ -292,7 +289,7 @@ export default function OurStoryPage() {
       </section>
 
       {/* The Bigger Mission Section */}
-      <section className="py-24 md:py-32 px-6 md:px-12 lg:px-24">
+      <section className="section-blush py-24 md:py-32 px-6 md:px-12 lg:px-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -300,29 +297,28 @@ export default function OurStoryPage() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <p className="text-xs tracking-[0.4em] uppercase text-accent mb-8">
+          <p className="text-xs tracking-[0.4em] uppercase text-tessi-gold mb-8">
             The Bigger Mission
           </p>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-12">
             More than a brand.
             <br />
-            <span className="italic text-muted-foreground">A roadmap.</span>
+            <span className="italic text-tessi-gold">Your permission slip.</span>
           </h2>
           <div className="space-y-6 text-lg md:text-xl leading-relaxed text-muted-foreground">
             <p>
-              I want Tessi to be a roadmap for other young women who dream of
+              Tessi is a <span className="text-tessi-gold font-medium">permission slip</span> for young women who dream of
               building something of their own.
             </p>
             <p>
               I quit the &quot;safe&quot; corporate path to solo-build this
-              company from scratch, and I&apos;m documenting the entire journey
-              to show you that{" "}
-              <span className="text-foreground">it&apos;s possible</span>.
+              company from scratch, documenting every win and mistake along the way
+              to prove that{" "}
+              <span className="text-tessi-gold font-medium">it&apos;s possible</span>.
             </p>
             <p>
-              I want this brand to inspire you to take up space, trust your
-              vision, and feel empowered to start your own company—whether
-              that&apos;s in sports, fashion, or beyond.
+              This brand exists to inspire you to <span className="text-dusty-rose italic">take up space</span>, trust your
+              vision, and bet on yourself—whether that&apos;s in sports, fashion, or beyond.
             </p>
           </div>
 
@@ -331,15 +327,17 @@ export default function OurStoryPage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="font-serif text-2xl md:text-3xl italic text-foreground leading-snug mt-16"
+            className="font-serif text-2xl md:text-3xl italic leading-snug mt-16"
           >
-            &quot;Take up space. Trust your vision. Build your legacy.&quot;
+            <span className="text-tessi-gold">&quot;Take up space.</span>{" "}
+            <span className="text-dusty-rose">Trust your vision.</span>{" "}
+            <span className="text-tessi-gold">Build your legacy.&quot;</span>
           </motion.p>
         </motion.div>
       </section>
 
       {/* Footer CTA */}
-      <section className="py-20 md:py-28 px-6 bg-secondary">
+      <section className="section-champagne py-20 md:py-28 px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -347,11 +345,11 @@ export default function OurStoryPage() {
           className="max-w-2xl mx-auto text-center"
         >
           <p className="font-serif text-3xl md:text-4xl mb-8">
-            Ready to elevate your game?
+            Ready to <span className="text-tessi-gold italic">elevate</span> your game?
           </p>
           <a
             href="/"
-            className="inline-block border border-foreground px-12 py-5 text-sm tracking-[0.25em] uppercase hover:bg-foreground hover:text-background transition-colors duration-300"
+            className="inline-block btn-primary"
           >
             Join the Waitlist
           </a>
