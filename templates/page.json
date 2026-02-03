@@ -6,11 +6,33 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
+    "tessi_our_story_eQnfag": {
+      "type": "tessi-our-story",
+      "name": "Tessi Our Story",
+      "settings": {
+        "hero_title": "Our Story",
+        "why_label": "Why Tessi",
+        "founder_label": "Meet the Founder",
+        "mission_label": "The Bigger Mission",
+        "cta_title": "Ready to elevate your game?",
+        "cta_link": "",
+        "cta_text": "Join the Waitlist"
+      }
+    },
     "main": {
       "type": "main-page",
       "blocks": {
+        "custom_liquid_DJaF6k": {
+          "type": "custom-liquid",
+          "name": "t:names.custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          },
+          "blocks": {}
+        },
         "heading": {
           "type": "text",
           "name": "Title",
@@ -44,9 +66,11 @@
         }
       },
       "block_order": [
+        "custom_liquid_DJaF6k",
         "heading",
         "page-content"
       ],
+      "disabled": true,
       "settings": {
         "content_direction": "column",
         "gap": 32,
@@ -57,6 +81,7 @@
     }
   },
   "order": [
+    "tessi_our_story_eQnfag",
     "main"
   ]
 }
