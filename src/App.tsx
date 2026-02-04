@@ -26,7 +26,6 @@ export default function OurStoryPage() {
     founder1: root?.dataset.imageFounder1 || '',
     founder2: root?.dataset.imageFounder2 || '',
   };
-
   return (
     <main className="min-h-screen bg-[#FFFFFF] text-[#333333] overflow-hidden">
       {/* Hero Section - Full bleed with editorial typography */}
@@ -64,75 +63,91 @@ export default function OurStoryPage() {
 
       {/* Why Tessi Section */}
       <section className="py-24 md:py-32 bg-[#F9F4EB]">
-        {/* Opening Statement with decorative element */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="px-6 md:px-12 lg:px-24 max-w-7xl mx-auto mb-20 md:mb-28"
-        >
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-[1px] bg-[#C8A974]" />
-            <p className="text-xs tracking-[0.4em] uppercase text-[#C8A974] font-medium">
-              Why Tessi
-            </p>
+        <div className="px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+          {/* Section Label */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-16 md:mb-20"
+          >
+            <div className="flex items-center gap-4 mb-10">
+              <div className="w-12 h-[1px] bg-[#C8A974]" />
+              <p className="text-lg tracking-[0.4em] uppercase text-[#C8A974] font-medium">
+                Why TESSI ?
+              </p>
+            </div>
+            <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.1] max-w-5xl text-[#333333]">
+              The answer to a question the sports industry{" "}
+              <span className="italic text-[#D4A5A5]">stopped asking.</span>
+            </h2>
+          </motion.div>
+
+          {/* Two Column Grid Layout */}
+          <div className="flex flex-col md:flex-row gap-10 md:gap-16 lg:gap-24 items-start">
+            {/* Left Column - Image */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="md:flex-1 w-full"
+            >
+              <div className="relative">
+                <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-[#C8A974] z-0" />
+                <div className="relative aspect-[4/5] w-full max-w-md z-10">
+                <Image
+                  src={images.grips}
+                  alt="Luxury tennis court at golden hour"
+                  fill
+                  className="object-cover"
+       
+                />
+                </div>
+                <div className="absolute -bottom-4 right-8 w-24 h-24 border-b-2 border-r-2 border-[#C8A974] z-0" />
+              </div>
+            </motion.div>
+
+            {/* Right Column - Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="md:flex-1 flex flex-col justify-center"
+            >
+              {/* Quote Block */}
+              <div className="border-l-4 border-[#D4A5A5] pl-6 md:pl-8 mb-10">
+                <span className="font-serif text-4xl text-[#D4A5A5] leading-none">&ldquo;</span>
+                <p className="font-serif text-xl md:text-2xl leading-snug text-[#333333] -mt-2">
+                  Most brands treat women&apos;s sports equipment as an afterthought—or worse, they just{" "}
+                  <span className="italic">shrink it and pink it.</span>
+                </p>
+              </div>
+
+              {/* Main Text */}
+              <div className="space-y-6 text-lg leading-relaxed text-[#666666]">
+                <p>
+                  <span className="font-serif-bold text-2xl text-[#C8A974]">TESSI is different.</span>{" "}
+                  We are the first brand to approach tennis gear as{" "}
+                  <span className="text-[#333333] font-serif italic">couture accessories</span>{" "}
+                  rather than just utility items.
+                </p>
+                <p>
+                  We blend high-fashion aesthetics with pro-grade performance. We
+                  curate collections inspired by luxury fashion houses, designed for
+                  the modern woman who views the court as her runway.
+                </p>
+              </div>
+
+              {/* Footer Accent */}
+              <div className="flex items-center gap-3 mt-10 pt-8 border-t border-[#E8DFD0]">
+                <div className="w-8 h-[2px] bg-[#C8A974]" />
+                <span className="text-xs tracking-[0.3em] uppercase text-[#C8A974]">Fashion Meets Function</span>
+              </div>
+            </motion.div>
           </div>
-          <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.1] max-w-5xl text-[#333333]">
-            The answer to a question the sports industry{" "}
-            <span className="italic text-[#D4A5A5]">stopped asking.</span>
-          </h2>
-        </motion.div>
-
-        {/* Image + Text Asymmetric Layout */}
-        <div className="relative px-6 md:px-0">
-          {/* Large Image with gold border accent */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="w-full md:w-2/3 lg:w-[55%] relative z-10 md:ml-12 lg:ml-24"
-          >
-            <div className="relative">
-              {/* Gold accent frame */}
-              <div className="absolute -top-4 -left-4 w-32 h-32 border-t-2 border-l-2 border-[#C8A974] z-20" />
-              <div className="relative aspect-[4/5] md:aspect-[3/4]">
-              <Image
-                src={images.tennisCourt}
-                alt="Luxury tennis court at golden hour"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            </div>
-          </motion.div>
-
-          {/* Overlapping Text Block */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative md:absolute md:right-6 lg:right-24 md:top-1/2 md:-translate-y-1/2 md:w-[45%] lg:w-[40%] z-20 bg-[#FFFFFF] p-8 md:p-12 lg:p-16 -mt-20 md:mt-0 mx-6 md:mx-0 shadow-xl"
-          >
-            <p className="text-lg md:text-xl leading-relaxed text-[#666666] mb-6">
-              Most brands treat women&apos;s sports equipment as an
-              afterthought—or worse, they just{" "}
-              <span className="text-[#333333] font-medium">&quot;shrink it and pink it.&quot;</span>
-            </p>
-            <p className="text-lg md:text-xl leading-relaxed text-[#666666] mb-6">
-              Tessi is different. We are the first brand to approach tennis gear
-              as <span className="text-[#333333] font-serif italic">couture accessories</span>{" "}
-              rather than just utility items.
-            </p>
-            <p className="text-lg md:text-xl leading-relaxed text-[#666666]">
-              We blend high-fashion aesthetics with pro-grade performance. We
-              curate collections inspired by luxury fashion houses, designed for
-              the modern woman who views the court as her runway.
-            </p>
-          </motion.div>
         </div>
 
         {/* Brand Pillars - Card style with hover effects */}
@@ -144,7 +159,7 @@ export default function OurStoryPage() {
           className="mt-32 md:mt-40 px-6 md:px-12 lg:px-24"
         >
           <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8">
               {[
                 {
                   num: "01",
@@ -168,7 +183,7 @@ export default function OurStoryPage() {
                 <motion.div
                   key={pillar.num}
                   variants={fadeIn}
-                  className="group p-10 md:p-12 transition-all duration-500 hover:shadow-lg cursor-default"
+                  className="md:flex-1 group p-10 md:p-12 transition-all duration-500 hover:shadow-lg cursor-default"
                   style={{ backgroundColor: pillar.bg }}
                 >
                   <span className="text-[#C8A974] text-sm tracking-[0.3em] font-medium">
